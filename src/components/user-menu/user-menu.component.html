@@ -1,0 +1,9 @@
+<button class="nav-account-button" mat-button [matMenuTriggerFor]="menu">
+  <img src="assets/images/person.jpg" />
+</button>
+<mat-menu #menu="matMenu" yPosition="below">
+  <button mat-menu-item *ngFor="let item of userMenuItems">
+    <mat-icon>{{ item.icon }}</mat-icon>
+    <span>{{ item.label }}</span>
+  </button>
+</mat-menu>

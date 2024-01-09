@@ -1,0 +1,38 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 7rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    /* margin-right: 3rem; */
+}
+
+.nav-list-item {
+    display: flex;
+    align-items: center;
+    
+    & > a {
+        margin: 0 2rem;
+    }
+}
+
+.nav-list-divider {
+    height: 2rem;
+}
