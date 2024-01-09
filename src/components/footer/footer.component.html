@@ -1,0 +1,44 @@
+<footer>
+  <div class="footer-content">
+    <div class="footer-contact">
+      <h2>Contact us</h2>
+      <p *ngFor="let contact of footerData.contact">
+        {{ contact.name }} {{ contact.data }}
+      </p>
+    </div>
+    <div class="footer-links">
+      <h2>Links</h2>
+      <ul>
+        <li *ngFor="let link of footerData.links">
+          <a href="{{ link.route }}">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Terms</h2>
+      <ul>
+        <li *ngFor="let term of footerData.terms">
+          <a href="{{ term.route }}">{{ term.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-socials">
+      <h2>Social media</h2>
+      <ul>
+        <li *ngFor="let social of footerData.social">
+          <a href="{{ social.route }}">
+            <mat-icon
+              class="footer-icon"
+              aria-hidden="false"
+              fontIcon="{{ social.icon }}"
+            ></mat-icon>
+            {{ social.name }}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-formula">
+    &#64;2024 HelpingHandsHub. Charity organization. All rights reserved.
+  </div>
+</footer>

@@ -1,6 +1,7 @@
 nav {
     position: fixed;
     top: 0;
+    height: var(--nav-height);
     width: 100vw;
     display: flex;
     flex-direction: row;
