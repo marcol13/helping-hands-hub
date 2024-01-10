@@ -50,15 +50,20 @@
   <div class="content-center">
     <h2>They trust us:</h2>
     <div class="people-cards">
-      <mat-card>
-        <mat-card-header>John Travolta</mat-card-header>
-        <mat-card-content>Simple card</mat-card-content></mat-card>
-      <mat-card><mat-card-content>Simple card</mat-card-content></mat-card>
-      <mat-card><mat-card-content>Simple card</mat-card-content></mat-card>
+      <app-card
+        *ngFor="let cardData of cardData"
+        [cardData]="cardData"
+      ></app-card>
     </div>
   </div>
-  <div class="content-center">
+  <div class="content-center margin-top">
     <h2>We collaborate with:</h2>
-    <div></div>
+    <div class="logo-container">
+      <img src="assets/logos/sony-logo.png" />
+      <img src="assets/logos/rover-logo.png" />
+      <img src="assets/logos/amazon-logo.png" />
+      <img src="assets/logos/asus-logo.png" />
+      <img src="assets/logos/nike-logo.png" />
+    </div>
   </div>
 </app-page>

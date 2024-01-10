@@ -1,0 +1,13 @@
+:host {
+  width: 300px;
+}
+
+img {
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.card-title {
+    margin: 1rem 0;
+    font-weight: bold;
+}

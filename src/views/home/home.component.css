@@ -3,6 +3,7 @@ h2 {
   background: -webkit-linear-gradient(var(--red), #ca2aea);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1;
 }
 
 .basic-info {
@@ -99,11 +100,24 @@ h2 {
     flex-direction: column;
 }
 
-
 .people-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
     margin: 2rem 0;
+}
+
+.logo-container {
+  display: flex;
+  gap: 1rem;
+
+  & > img {
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+.margin-top {
+  margin-top: 5rem;
 }
