@@ -1,5 +1,10 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
 .wrapper {
-  min-height: calc(100vh - var(--nav-height) - 2rem);
+  height: 100%;
   padding: var(--page-space-vertical) var(--page-space-horizontal);
 }
 
