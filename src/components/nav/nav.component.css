@@ -10,6 +10,7 @@ nav {
     padding: 1rem 4rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 
 .nav-menu {
@@ -36,4 +37,5 @@ nav {
 
 .nav-list-divider {
     height: 2rem;
+    color: var(--slate);
 }

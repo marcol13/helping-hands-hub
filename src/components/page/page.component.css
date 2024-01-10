@@ -1,0 +1,36 @@
+.wrapper {
+  min-height: calc(100vh - var(--nav-height) - 2rem);
+  padding: var(--page-space-vertical) var(--page-space-horizontal);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & > h2 {
+    display: inline;
+    font-size: 2.25rem;
+    color: var(--pink);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: var(--heading-highlight-w);
+      height: var(--heading-highlight-h);
+      position: absolute;
+      top: calc(50% - var(--heading-highlight-h) / 2);
+      background-color: var(--dark-red);
+    }
+
+    &::before {
+      left: calc(-1 * var(--heading-highlight-w) - 20px);
+    }
+
+    &::after {
+      right: calc(-1 * var(--heading-highlight-w) - 20px);
+    }
+  }
+}

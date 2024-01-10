@@ -1,0 +1,8 @@
+<div class="wrapper" [style.margin-top]="isFirst && '6rem'">
+  <div *ngIf="title" class="header">
+    <h2>{{ title }}</h2>
+  </div>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</div>

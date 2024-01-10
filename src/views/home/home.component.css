@@ -1,0 +1,109 @@
+h2 {
+  font-size: 2.75rem;
+  background: -webkit-linear-gradient(var(--red), #ca2aea);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.basic-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-container {
+  & > img {
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+    width: 430px;
+    height: 430px;
+    object-fit: cover;
+  }
+}
+
+.content-container {
+  & p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  & ol {
+    padding: 0 1rem;
+    font-size: 1.175rem;
+    line-height: 1.5;
+  }
+
+  & button {
+    background-image: linear-gradient(
+      to right,
+      #ff512f 0%,
+      #dd2476 51%,
+      #ff512f 100%
+    );
+    margin: 10px;
+    padding: 20px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.parallax-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  & .mat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+.parallax-item {
+  background-image: url("../../assets/images/home-1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  width: 250px;
+  height: 250px;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.people-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0;
+}

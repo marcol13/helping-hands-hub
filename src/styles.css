@@ -15,6 +15,10 @@
   /* Components */
   --nav-height: 4rem;
   --footer-height: 10rem;
+  --page-space-vertical: 2rem;
+  --page-space-horizontal: 4rem;
+  --heading-highlight-w: 3rem;
+  --heading-highlight-h: 0.5rem;
 }
 
 html,
@@ -23,7 +27,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
   color: var(--black);
   background-color: var(--white);
 }
