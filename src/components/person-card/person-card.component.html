@@ -1,0 +1,31 @@
+<a href="/person/{{ cardData.id }}" class="card-link">
+  <mat-card class="card">
+    <img mat-card-image src="{{ cardData.image }}" />
+    <mat-card-header class="card-header">
+      <mat-card-title card="card-title"
+        >{{ cardData.name }} ({{ cardData.age }})</mat-card-title
+      >
+    </mat-card-header>
+    <div>
+      <mat-divider class="card-divider"></mat-divider>
+    </div>
+    <mat-card-content>
+      <div class="card-location">
+        <div>
+          <mat-icon>location_on</mat-icon>
+          <span>{{ cardData.distance }}km</span>
+        </div>
+        <span>{{ cardData.location }}</span>
+      </div>
+      <div class="card-content">
+        <p><b>Help needed:</b> {{ cardData.help.join(", ") }}</p>
+        <p><b>Hobbys:</b> {{ cardData.hobby.join(", ") }}</p>
+        <p><b>Languages:</b> {{ cardData.language.join(", ") }}</p>
+      </div>
+    </mat-card-content>
+    <mat-progress-bar
+      mode="determinate"
+      value="{{ cardData.match }}"
+    ></mat-progress-bar>
+  </mat-card>
+</a>

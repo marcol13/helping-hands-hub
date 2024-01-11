@@ -1,3 +1,6 @@
 <app-page [isFirst]="true">
     <app-filters></app-filters>
+    <div class="cards-container">
+        <app-person-card *ngFor="let card of cardsData" [cardData]="card"></app-person-card>
+    </div>
 </app-page>
