@@ -1,0 +1,22 @@
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.name-input {
+    grid-column: 1 / 4;
+}
+
+.slider-div {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 2rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

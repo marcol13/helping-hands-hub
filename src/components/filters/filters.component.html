@@ -1,1 +1,39 @@
-<p>filters works!</p>
+<div>
+  <form [formGroup]="filtersForm">
+    <mat-form-field class="name-input">
+      <input formControlName="nameInput" matInput placeholder="Find by Name" type="text" />
+    </mat-form-field>
+    <button mat-raised-button (click)="onClick($event)">Search</button>
+    <div class="slider-div">
+      <mat-label>Distance</mat-label>
+      <mat-slider discrete [displayWith]="formatKm" min="0" max="50">
+        <input formControlName="distanceInput" matSliderThumb/>
+      </mat-slider>
+    </div>
+    <div class="slider-div">
+      <mat-label>Age</mat-label>
+      <mat-slider discrete min="50" max="110">
+        <input formControlName="minAgeInput" matSliderStartThumb />
+        <input formControlName="maxAgeInput" matSliderEndThumb />
+      </mat-slider>
+    </div>
+    <mat-form-field>
+      <mat-label>Hobby</mat-label>
+      <mat-select formControlName="hobbyInput" multiple>
+        @for (variant of hobbyVariants; track filtersForm) {
+        <mat-option [value]="variant">{{ variant }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Language</mat-label>
+      <mat-select formControlName="languageInput" multiple>
+        @for (lang of languageVariants; track filtersForm) {
+        <mat-option [value]="lang">{{ lang }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <mat-divider></mat-divider>
+</div>
