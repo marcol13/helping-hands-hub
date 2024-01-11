@@ -15,7 +15,7 @@ import { NgFor } from '@angular/common';
     MatListModule,
     MatButtonModule,
     PersonCardComponent,
-    NgFor,
+    NgFor
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-filters',
@@ -28,6 +29,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSliderModule,
     ReactiveFormsModule,
     MatDividerModule,
+    TitleCasePipe
   ],
   templateUrl: './filters.component.html',
   styleUrl: './filters.component.css',
@@ -40,7 +42,7 @@ export class FiltersComponent {
   filtersForm = new FormGroup({
     nameInput: new FormControl(''),
     distanceInput: new FormControl(20),
-    minAgeInput: new FormControl(50),
+    minAgeInput: new FormControl(20),
     maxAgeInput: new FormControl(110),
     hobbyInput: new FormControl(''),
     languageInput: new FormControl(''),
@@ -51,21 +53,24 @@ export class FiltersComponent {
     console.log(this.filtersForm.value)
   }
 
-  hobbyVariants: string[] = [
-    'Football',
-    'Tennis',
-    'Cooking',
-    'Astronomy',
-    'Games',
-  ];
+  @Input() hobbyVariants!: string[];
+  @Input() assistanceVariants!: string[];
 
-  languageVariants: string[] = [
-    'English',
-    'Spanish',
-    'German',
-    'French',
-    'Russian',
-  ];
+  // hobbyVariants: string[] = [
+  //   'Football',
+  //   'Tennis',
+  //   'Cooking',
+  //   'Astronomy',
+  //   'Games',
+  // ];
+
+  // languageVariants: string[] = [
+  //   'English',
+  //   'Spanish',
+  //   'German',
+  //   'French',
+  //   'Russian',
+  // ];
   // hideRequiredControl = new FormControl(false);
   // floatLabelControl = new FormControl('auto' as FloatLabelType);
 }

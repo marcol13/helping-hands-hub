@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { personCardData } from '../../interfaces/personCardData';
 import { Input } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-person-card',
@@ -14,6 +15,7 @@ import { Input } from '@angular/core';
     MatDividerModule,
     MatIconModule,
     MatProgressBarModule,
+    TitleCasePipe
   ],
   templateUrl: './person-card.component.html',
   styleUrl: './person-card.component.css',

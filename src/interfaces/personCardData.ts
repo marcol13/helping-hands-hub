@@ -1,7 +1,3 @@
-type help = 'Food' | 'Medicine' | 'Time';
-type hobby = 'Football' | 'Tennis' | 'Cooking';
-type language = 'English' | 'Spanish' | 'German';
-
 export interface personCardData {
   id: number;
   image: string;
@@ -9,8 +5,8 @@ export interface personCardData {
   age: number;
   location: string;
   distance: number;
-  help: help[];
-  hobby: hobby[];
-  language: language[];
+  help: string[];
+  hobby: string[];
+  language: string[];
   match: number;
 }

@@ -1,0 +1,14 @@
+{
+  "/persons": {
+    "target": "http://localhost:8085",
+    "secure": true,
+    "changeOrigin": false,
+    "logLevel": "debug"
+  },
+  "/predict": {
+    "target": "http://localhost:8085",
+    "secure": true,
+    "changeOrigin": false,
+    "logLevel": "debug"
+  }
+}

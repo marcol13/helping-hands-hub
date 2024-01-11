@@ -15,17 +15,18 @@
           <mat-icon>location_on</mat-icon>
           <span>{{ cardData.distance }}km</span>
         </div>
-        <span>{{ cardData.location }}</span>
+        <span>{{ cardData.location }}, Poland</span>
       </div>
       <div class="card-content">
-        <p><b>Help needed:</b> {{ cardData.help.join(", ") }}</p>
-        <p><b>Hobbys:</b> {{ cardData.hobby.join(", ") }}</p>
-        <p><b>Languages:</b> {{ cardData.language.join(", ") }}</p>
+        <p><b>Help needed:</b> {{ cardData.help.join(", ") | titlecase }}</p>
+        <p><b>Hobbys:</b> {{ cardData.hobby.join(", ") | titlecase }}</p>
+        <p><b>Languages:</b> {{ cardData.language.join(", ") | titlecase }}</p>
       </div>
     </mat-card-content>
     <mat-progress-bar
       mode="determinate"
       value="{{ cardData.match }}"
+      class="predict-value"
     ></mat-progress-bar>
   </mat-card>
 </a>

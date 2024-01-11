@@ -1,6 +1,8 @@
 .card {
     /* width: 100px; */
     min-height: 350px;
+    height: 100%;
+    position: relative;
 
     & img {
         width: 100%;
@@ -58,4 +60,9 @@
 .card-link {
     all: unset;
     cursor: pointer;
+}
+
+.predict-value {
+    position: absolute;
+    bottom: 0;
 }
