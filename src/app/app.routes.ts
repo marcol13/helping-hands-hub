@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'join', component: JoinComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:id', component: ProfileComponent },
   { path: 'visits', component: VisitsComponent },
   { path: 'favourites', component: FavouritesComponent },
   {
