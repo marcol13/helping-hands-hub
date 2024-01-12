@@ -1,5 +1,5 @@
-<button class="nav-account-button" mat-button [matMenuTriggerFor]="menu">
-  <img src="assets/images/person.jpg" />
+<button class="nav-account-button" mat-button [matMenuTriggerFor]="menu" aria-label="Profile">
+  <img src="assets/images/person.jpg" alt="User avatar" />
 </button>
 <mat-menu #menu="matMenu" yPosition="below">
   <button mat-menu-item *ngFor="let item of userMenuItems">
