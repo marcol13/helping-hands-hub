@@ -6,10 +6,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -55,22 +53,4 @@ export class FiltersComponent {
 
   @Input() hobbyVariants!: string[];
   @Input() assistanceVariants!: string[];
-
-  // hobbyVariants: string[] = [
-  //   'Football',
-  //   'Tennis',
-  //   'Cooking',
-  //   'Astronomy',
-  //   'Games',
-  // ];
-
-  // languageVariants: string[] = [
-  //   'English',
-  //   'Spanish',
-  //   'German',
-  //   'French',
-  //   'Russian',
-  // ];
-  // hideRequiredControl = new FormControl(false);
-  // floatLabelControl = new FormControl('auto' as FloatLabelType);
 }

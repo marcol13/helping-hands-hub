@@ -1,1 +1,44 @@
-<p>contact works!</p>
+<app-page [isFirst]="true" [title]="'Contact us'">
+  <div class="contact">
+    <div>
+      <form [formGroup]="contactForm">
+        <mat-form-field class="name-input">
+          <input
+            formControlName="nameInput"
+            matInput
+            placeholder="Your name"
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="email-input">
+          <input
+            formControlName="emailInput"
+            matInput
+            placeholder="Your e-mail"
+            type="email"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="typeInput" placeholder="Choose type">
+            <mat-option [value]="'join'">Join us</mat-option>
+            <mat-option [value]="'report'">Report bad behaviour</mat-option>
+            <mat-option [value]="'register'"
+              >Register person in need</mat-option
+            >
+            <mat-option [value]="'career'">Career</mat-option>
+            <mat-option [value]="'other'">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="message-input">
+          <textarea
+            formControlName="messageInput"
+            matInput
+            placeholder="Write your message"
+          ></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Send mail</button>
+      </form>
+    </div>
+    <img src="assets/images/mail.svg" />
+  </div>
+</app-page>
