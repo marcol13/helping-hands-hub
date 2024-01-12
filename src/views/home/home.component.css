@@ -116,3 +116,8 @@ h2 {
 .margin-top {
   margin-top: 5rem;
 }
+
+.unset-link {
+  all: unset;
+  cursor: pointer;
+}
