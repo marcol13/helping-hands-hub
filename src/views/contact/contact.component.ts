@@ -27,8 +27,4 @@ export class ContactComponent {
     typeInput: new FormControl(''),
     messageInput: new FormControl(''),
   });
-
-  onClick(e: Event) {
-    e.preventDefault();
-  }
 }

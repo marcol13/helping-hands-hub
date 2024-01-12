@@ -27,7 +27,7 @@ export class NavComponent {
     // { name: 'Home', route: '/home' },
     { name: 'Match', route: '/match' },
     { name: 'About', route: '/about' },
-    { name: 'Join', route: '/join-us' },
+    { name: 'Join', route: '/join' },
     { name: 'Contact', route: '/contact' },
   ];
 }

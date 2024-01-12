@@ -38,7 +38,7 @@ export class FooterComponent {
       },
       {
         name: 'Join us',
-        route: '/join-us',
+        route: '/join',
       },
     ],
     terms: [
