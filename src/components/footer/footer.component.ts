@@ -58,9 +58,9 @@ export class FooterComponent {
         icon: 'facebook',
       },
       {
-        name: 'Twitter',
-        route: 'https://www.twitter.com',
-        icon: 'twitter',
+        name: 'TikTok',
+        route: 'https://www.tiktok.com',
+        icon: 'tiktok',
       },
       {
         name: 'Instagram',

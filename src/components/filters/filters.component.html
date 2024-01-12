@@ -28,7 +28,7 @@
 
     <mat-form-field>
       <mat-label>Assistance</mat-label>
-      <mat-select formControlName="languageInput" multiple>
+      <mat-select formControlName="assistanceInput" multiple>
         @for (assistance of assistanceVariants; track filtersForm) {
         <mat-option [value]="assistance">{{ assistance | titlecase }}</mat-option>
         }

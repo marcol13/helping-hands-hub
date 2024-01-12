@@ -34,6 +34,51 @@ export class SearchPageComponent implements OnInit {
   ids: number[] = [];
   hobbys: string[] = [];
   assistance: string[] = [];
+  filteredData: any[] = [];
+
+  makeCard(data: any) {
+    return data.map((el: any) => ({
+      id: el.id,
+      image: el.image,
+      name: el.name,
+      age: el.age,
+      location: el.location,
+      distance: el.distance,
+      help: el.type_of_assistance,
+      hobby: el.hobby,
+      language: el.communication_language,
+      match: el.predict,
+    }));
+  }
+
+  applyFilters(filters: any) {
+    console.log(this.filteredData);
+    const haveAny = (origin: string[], filter: string[]) => {
+      return origin.some((el) => filter.includes(el));
+    };
+
+    this.filteredData = this.data.filter((el) => {
+      const matchFilters = {
+        name: el.name.includes(filters.nameInput),
+        distance: el.distance <= filters.distanceInput,
+        age: el.age >= filters.minAgeInput && el.age <= filters.maxAgeInput,
+        hobby:
+          filters.hobbyInput === '' ||
+          filters.hobbyInput?.length === 0 ||
+          haveAny(el.hobby, filters.hobbyInput),
+        assistance:
+          filters.assistanceInput === '' ||
+          filters.assistanceInput?.length === 0 ||
+          haveAny(el.type_of_assistance, filters.assistanceInput),
+      };
+
+      console.log(matchFilters);
+
+      return Object.values(matchFilters).every((el) => el === true);
+    });
+
+    this.cardsData = this.makeCard(this.filteredData);
+  }
 
   ngOnInit() {
     this.fetchData();
@@ -56,6 +101,9 @@ export class SearchPageComponent implements OnInit {
           ),
           ...el,
         }));
+
+        this.filteredData = this.data;
+
         this.hobbys = Array.from(
           new Set(this.data.map((item: any) => item.hobby).flat()).values()
         );
@@ -73,18 +121,7 @@ export class SearchPageComponent implements OnInit {
           }));
           this.data = this.data.sort((a, b) => b.predict - a.predict); // Sort in descending order
 
-          this.cardsData = this.data.map((el: any) => ({
-            id: el.id,
-            image: el.image,
-            name: el.name,
-            age: el.age,
-            location: el.location,
-            distance: el.distance,
-            help: el.type_of_assistance,
-            hobby: el.hobby,
-            language: el.communication_language,
-            match: el.predict,
-          }));
+          this.cardsData = this.makeCard(this.data);
         });
       });
   }

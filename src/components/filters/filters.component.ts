@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -33,6 +33,8 @@ import { TitleCasePipe } from '@angular/common';
   styleUrl: './filters.component.css',
 })
 export class FiltersComponent {
+  @Output() filters = new EventEmitter();
+
   formatKm(value: number) {
     return value + 'km';
   }
@@ -42,12 +44,13 @@ export class FiltersComponent {
     distanceInput: new FormControl(20),
     minAgeInput: new FormControl(20),
     maxAgeInput: new FormControl(110),
-    hobbyInput: new FormControl(''),
-    languageInput: new FormControl(''),
+    hobbyInput: new FormControl([]),
+    assistanceInput: new FormControl([]),
   });
   
   onClick(e: Event) {
     e.preventDefault();
+    this.filters.emit(this.filtersForm.value);
     console.log(this.filtersForm.value)
   }
 

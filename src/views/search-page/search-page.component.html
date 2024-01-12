@@ -1,5 +1,5 @@
 <app-page [isFirst]="true">
-    <app-filters [assistanceVariants]="assistance" [hobbyVariants]="hobbys"></app-filters>
+    <app-filters [assistanceVariants]="assistance" [hobbyVariants]="hobbys" (filters)="applyFilters($event)"></app-filters>
     <div class="cards-container">
         <app-person-card *ngFor="let card of cardsData" [cardData]="card"></app-person-card>
     </div>
