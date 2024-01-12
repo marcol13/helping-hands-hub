@@ -8,6 +8,7 @@ h2 {
 
 .basic-info {
   display: grid;
+  align-items: flex-start;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -72,39 +73,33 @@ h2 {
 
 .parallax-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-
-  & .mat-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 2.5rem;
-  }
+  justify-content: center;
 }
 
 .parallax-item {
-  background-image: url("../../assets/images/home-1.jpg");
+  background-image: url("../../assets/images/parallax.jpg");
   background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 3rem top 5rem;
+  background-size: 50%;
 
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
 }
 
 .content-center {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 .people-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 2rem 0;
 }
 
 .logo-container {
