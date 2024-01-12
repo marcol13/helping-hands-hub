@@ -10,6 +10,8 @@ import {
   HttpClientModule,
   HttpHeaders,
 } from '@angular/common/http';
+import { countDistance } from '../../utils/methods';
+import { HOME_LAT, HOME_LONG } from '../../utils/const';
 
 @Component({
   selector: 'app-search-page',
@@ -33,22 +35,8 @@ export class SearchPageComponent implements OnInit {
   hobbys: string[] = [];
   assistance: string[] = [];
 
-  home_lat = 52.406376;
-  home_long = 16.925167;
-
   ngOnInit() {
     this.fetchData();
-  }
-
-  countDistance(lat1: number, long1: number, lat2: number, long2: number) {
-    return parseFloat(
-      (
-        Math.acos(
-          Math.sin(lat1) * Math.sin(lat2) +
-            Math.cos(lat1) * Math.cos(lat2) * Math.cos(long2 - long1)
-        ) * 6371
-      ).toFixed(2)
-    );
   }
 
   fetchData() {
@@ -58,12 +46,14 @@ export class SearchPageComponent implements OnInit {
         this.data = Object.values(data).map((el: any, idx) => ({
           id: idx + 1,
           image: `assets/images/people/person_${idx + 1}.jpg`,
-          distance: Math.round(this.countDistance(
-            this.home_lat,
-            this.home_long,
-            el.coordinates_of_city[0],
-            el.coordinates_of_city[1]
-          ) / 1000),
+          distance: Math.round(
+            countDistance(
+              HOME_LAT,
+              HOME_LONG,
+              el.coordinates_of_city[0],
+              el.coordinates_of_city[1]
+            ) / 1000
+          ),
           ...el,
         }));
         this.hobbys = Array.from(

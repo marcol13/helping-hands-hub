@@ -8,5 +8,6 @@ export interface personCardData {
   help: string[];
   hobby: string[];
   language: string[];
-  match: number;
+  match?: number;
+  description?: string;
 }

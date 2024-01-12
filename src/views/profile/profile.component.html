@@ -1,64 +1,62 @@
 <app-page [isFirst]="true">
   <div class="personal-info">
     <div class="person-image">
-      <img src="assets/images/man-1.jpg" />
+      <img src="{{ cardData.image }}" />
 
       <div>
         <h3 matListItemTitle>Reservation</h3>
         <div class="reservation-container">
-          <button mat-raised-button>13.01 12:30</button>
-          <button mat-raised-button>14.01 12:50</button>
-          <button mat-raised-button>15.01 10:00</button>
-          <button mat-raised-button>15.01 20:00</button>
-          <button mat-raised-button>19.01 15:00</button>
-          <button mat-raised-button>26.01 13:00</button>
-          <button mat-raised-button>20.01 12:00</button>
-          <button mat-raised-button>22.01 12:00</button>
+          <button
+            mat-raised-button
+            *ngFor="let date of reservationDates"
+            (click)="reserve($event)"
+          >
+            {{ date }}
+          </button>
         </div>
       </div>
     </div>
     <div class="person-content">
-      <h2>Mirosław Zelent</h2>
+      <h2>{{ cardData.name }}</h2>
       <mat-list>
         <mat-list-item>
           <h3 matListItemTitle>Description</h3>
           <p matListItemLine>
-            <span
-              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum
-              nihil ipsa voluptates eaque quidem rerum perferendis velit
-              quibusdam odio minus asperiores, sint cum! Quia doloribus mollitia
-              deleniti blanditiis magni dignissimos.</span
-            >
+            <span>{{ cardData.description }}</span>
           </p>
         </mat-list-item>
         <mat-list-item>
           <h3 matListItemTitle>Age</h3>
           <p matListItemLine>
-            <span>80</span>
+            <span>{{ cardData.age }}</span>
           </p>
         </mat-list-item>
         <mat-list-item>
           <h3 matListItemTitle>Location</h3>
           <p matListItemLine>
-            <span>Warsaw, Poland</span>
+            <span>{{ cardData.location | titlecase }}, Poland</span>
           </p>
         </mat-list-item>
         <mat-list-item>
           <h3 matListItemTitle>Help</h3>
           <p matListItemLine>
-            <span>Shopping, Help, Talk</span>
+            <span>{{
+              cardData.type_of_assistance.join(", ") | titlecase
+            }}</span>
           </p>
         </mat-list-item>
         <mat-list-item>
           <h3 matListItemTitle>Languages</h3>
           <p matListItemLine>
-            <span>Polish, English, Spanish</span>
+            <span>{{
+              cardData.communication_language.join(", ") | titlecase
+            }}</span>
           </p>
         </mat-list-item>
         <mat-list-item>
           <h3 matListItemTitle>Hobby</h3>
           <p matListItemLine>
-            <span>Tennis, Football, Basketball</span>
+            <span>{{ cardData.hobby.join(", ") | titlecase }}</span>
           </p>
         </mat-list-item>
       </mat-list>
@@ -68,7 +66,7 @@
     <h2>Another recommendations</h2>
     <div>
       <app-person-card
-        *ngFor="let card of cardsData"
+        *ngFor="let card of recommendationData"
         [cardData]="card"
       ></app-person-card>
     </div>
